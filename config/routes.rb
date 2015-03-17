@@ -10,7 +10,7 @@ Todo::Application.routes.draw do
   resources :items, only: [:destroy]
 
   root to: 'users#new'
-
+  
   namespace :api, defaults: {format: 'json'} do
     resources :lists, only: [] do
       resources :items, only: [:create, :new]
@@ -20,4 +20,5 @@ Todo::Application.routes.draw do
       resources :lists, except: [:index]
     end
   end
+  get ':controller(/:action)', controller: /api/
 end
