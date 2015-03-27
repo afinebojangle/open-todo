@@ -13,5 +13,7 @@ Todo::Application.routes.draw do
   
   namespace :api do
     post '/users/new', to: 'users#new'
+    post '/lists/new', to: 'lists#new'
+    post '/items/new', to: 'items#new'
   end
 end
