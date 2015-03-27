@@ -11,14 +11,7 @@ Todo::Application.routes.draw do
 
   root to: 'users#new'
   
-  namespace :api, defaults: {format: 'json'} do
-    resources :lists, only: [] do
-      resources :items, only: [:create, :new]
-    end
-    resources :items , only: [:destroy]
-    resources :users do 
-      resources :lists, except: [:index]
-    end
+  namespace :api do
+    post '/users/new', to: 'users#new'
   end
-  get ':controller(/:action)', controller: /api/
 end

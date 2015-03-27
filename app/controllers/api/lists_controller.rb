@@ -1,4 +1,3 @@
-module Api
-  class Api::ListsController < ApiController
-  end
+class Api::ListsController < ApiController
+
 end
