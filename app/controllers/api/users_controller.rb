@@ -8,14 +8,19 @@ class Api::UsersController < ApiController
       error(400, "User was not saved")
     end
   end
+
+  def auth
+    set_api_user
+    if auth_api_user
+      success(200, "Welcome Aboard!")
+    else
+      permission_denied_error
+    end
+  end
      
     
     
   private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def api_user_params
     params.permit(:username, :password)

@@ -5,6 +5,14 @@ class ApiController < ActionController::Base
 
   private
 
+  def set_api_user
+    @user = User.find(params[:user_id])
+  end
+
+  def auth_api_user
+    @user.password == params[:password]
+  end
+
   def permission_denied_error
     error(403, 'Permission Denied!')
   end

@@ -15,5 +15,12 @@ Todo::Application.routes.draw do
     post '/users/new', to: 'users#new'
     post '/lists/new', to: 'lists#new'
     post '/items/new', to: 'items#new'
+    post '/users/auth', to: 'users#auth' 
+    post '/lists/add', to: 'lists#add'
+    post '/lists/remove', to: 'lists#remove'
+    post '/lists/changepermissions', to: 'lists#changepermissions'
+    post '/items/add', to: 'items#add'
+    post '/items/remove', to: 'items#remove'
+    post '/lists/index', to: 'lists#index'
   end
 end
